@@ -39,14 +39,26 @@ public class BatchSystemEvoConsoleUI
   public Map<String,String> loadArgumentsWizard()
   {
     // Use existing config
-    if(Console.arguments.containsKey(arcade.strings.args.sourceDir.id))      
+    if(Console.arguments.containsKey(arcade.strings.args.sourceDir.id)
+    	&& Console.arguments.containsKey(arcade.strings.args.param1.id)
+        	&& Console.arguments.containsKey(arcade.strings.args.param2.id))      
     {
       System.out.print("All arguments found in configuration. ");
       System.out.println("Use existing arguments? (y/n)");
       String choice = Console.in.nextLine();
       if(choice.equals("y"))
         return Console.arguments;
-    }    
+    }        
+    
+    if(!useConfigArgument(arcade.strings.args.sourceDir.id))
+        loadArgument(arcade.strings.args.sourceDir.id,
+          arcade.strings.args.sourceDir.name);    
+	if(!useConfigArgument(arcade.strings.args.param1.id))
+	    loadArgument(arcade.strings.args.param1.id,
+	      arcade.strings.args.param1.name);
+	if(!useConfigArgument(arcade.strings.args.param2.id))
+	      loadArgument(arcade.strings.args.param2.id,
+	        arcade.strings.args.param2.name);
 
     return argumentBuilder;
   }
@@ -57,7 +69,7 @@ public class BatchSystemEvoConsoleUI
   {
 	  a2a.checkArguments(args);
 	  a2a.execute(args);
-  }
+  }  
 
   @Override
   public String[] loadRequisites()

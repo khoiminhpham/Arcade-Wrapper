@@ -29,8 +29,10 @@ public class BatchSystemEvoWrapper
     throws Exception, IOException, IllegalArgumentException
   {
     String fs = File.separator;
-    String[] parsedArgs = new String[1];
-    parsedArgs[0] = args.get(arcade.strings.args.sourceDir.id);        
+    String[] parsedArgs = new String[3];
+    parsedArgs[0] = args.get(arcade.strings.args.sourceDir.id); 
+    parsedArgs[1] = args.get(arcade.strings.args.param1.id); 
+    parsedArgs[2] = args.get(arcade.strings.args.param2.id); 
     
     BatchSystemEvo.main(parsedArgs);
   }
