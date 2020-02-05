@@ -1,0 +1,10 @@
+sourceDir=D:\joshuaga-arcade-21f0389ea498\joshuaga-arcade-21f0389ea498\subject_systems\Struts2\acdc\cluster
+outputDir=D:\DockerDir\Arcade\output
+depsRsfFile=D:\DockerDir\Arcade\output\acdc\struts-2.5.8_deps.rsf
+clusterFile=D:\DockerDir\Arcade\output\acdc\output_clustered.rsf
+smellsFile=D:\DockerDir\Arcade\output\acdc\output_smells.ser
+malletPath=.\src\test\resources\tools\mallet-2.0.7\bin\mallet.bat
+malletHome=.\src\test\resources\tools\mallet-2.0.7
+topicModel=.\target\test-results\Struts2\arc\base\topicmodel.data
+binDir=lib_struts
+language=java
