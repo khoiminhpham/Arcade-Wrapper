@@ -5,13 +5,13 @@ import java.util.HashMap;
 import edu.usc.softarch.arcade.frontend.console.ConsoleUI;
 import edu.usc.softarch.arcade.frontend.console.Console;
 import edu.usc.softarch.arcade.frontend.features.FeatureWrapper;
-import edu.usc.softarch.arcade.frontend.features.depsbuilder.JavaSourceToDepsBuilderWrapper;
+import edu.usc.softarch.arcade.frontend.features.depsbuilder.CSourceToDepsBuilderWrapper;
 
-public class JavaSourceToDepsBuilderConsoleUI
+public class CSourceToDepsBuilderConsoleUI
   extends ConsoleUI
 {
-  JavaSourceToDepsBuilderWrapper DepsBuilder
-    = new JavaSourceToDepsBuilderWrapper();
+  CSourceToDepsBuilderWrapper DepsBuilder
+    = new CSourceToDepsBuilderWrapper();
 
   @Override
   public String getName()
@@ -31,8 +31,7 @@ public class JavaSourceToDepsBuilderConsoleUI
     String cr = System.lineSeparator();
     String instructions = "Java Fact Extractor requires the following arguments:" + cr;
     instructions += arcade.strings.args.sourceDir.instruction + cr;
-    instructions += arcade.strings.args.depsRsfFile.instruction + cr;
-    instructions += arcade.strings.args.binDir.instruction + cr;
+    instructions += arcade.strings.args.depsRsfFile.instruction + cr;    
 
     return instructions;
   }
@@ -42,8 +41,7 @@ public class JavaSourceToDepsBuilderConsoleUI
   {
     // Use existing config
     if(Console.arguments.containsKey(arcade.strings.args.sourceDir.id)
-      && Console.arguments.containsKey(arcade.strings.args.depsRsfFile.id)
-    	&& Console.arguments.containsKey(arcade.strings.args.binDir.id))
+      && Console.arguments.containsKey(arcade.strings.args.outputDir.id))    	
     {
       System.out.print("All arguments found in configuration. ");
       System.out.println("Use existing arguments? (y/n)");
@@ -58,10 +56,6 @@ public class JavaSourceToDepsBuilderConsoleUI
     if(!useConfigArgument(arcade.strings.args.depsRsfFile.id))
       loadArgument(arcade.strings.args.depsRsfFile.id,
         arcade.strings.args.depsRsfFile.name);
-
-    if(!useConfigArgument(arcade.strings.args.binDir.id))
-      loadArgument(arcade.strings.args.binDir.id,
-        arcade.strings.args.binDir.name);
 
     return argumentBuilder;
   }
