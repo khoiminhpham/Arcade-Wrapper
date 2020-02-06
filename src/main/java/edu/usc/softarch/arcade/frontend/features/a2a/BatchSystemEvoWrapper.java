@@ -30,9 +30,9 @@ public class BatchSystemEvoWrapper
   {
     String fs = File.separator;
     String[] parsedArgs = new String[3];
-    parsedArgs[0] = args.get(arcade.strings.args.sourceDir.id); 
-    parsedArgs[1] = args.get(arcade.strings.args.param1.id); 
-    parsedArgs[2] = args.get(arcade.strings.args.param2.id); 
+    parsedArgs[0] = "-distopt";
+    parsedArgs[1] = args.get(arcade.strings.args.distopt.id);
+    parsedArgs[2] = args.get(arcade.strings.args.sourceDir.id);
     
     BatchSystemEvo.main(parsedArgs);
   }

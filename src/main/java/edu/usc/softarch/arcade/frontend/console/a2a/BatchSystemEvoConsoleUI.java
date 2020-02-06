@@ -39,26 +39,22 @@ public class BatchSystemEvoConsoleUI
   public Map<String,String> loadArgumentsWizard()
   {
     // Use existing config
-    if(Console.arguments.containsKey(arcade.strings.args.sourceDir.id)
-    	&& Console.arguments.containsKey(arcade.strings.args.param1.id)
-        	&& Console.arguments.containsKey(arcade.strings.args.param2.id))      
+	if(Console.arguments.containsKey(arcade.strings.args.sourceDir.id)
+    	&& Console.arguments.containsKey(arcade.strings.args.distopt.id))      
     {
       System.out.print("All arguments found in configuration. ");
       System.out.println("Use existing arguments? (y/n)");
       String choice = Console.in.nextLine();
       if(choice.equals("y"))
         return Console.arguments;
-    }        
+    } 
     
     if(!useConfigArgument(arcade.strings.args.sourceDir.id))
         loadArgument(arcade.strings.args.sourceDir.id,
-          arcade.strings.args.sourceDir.name);    
-	if(!useConfigArgument(arcade.strings.args.param1.id))
-	    loadArgument(arcade.strings.args.param1.id,
-	      arcade.strings.args.param1.name);
-	if(!useConfigArgument(arcade.strings.args.param2.id))
-	      loadArgument(arcade.strings.args.param2.id,
-	        arcade.strings.args.param2.name);
+          arcade.strings.args.sourceDir.name);
+  	if(!useConfigArgument(arcade.strings.args.distopt.id))
+  	    loadArgument(arcade.strings.args.distopt.id,
+  	      arcade.strings.args.distopt.name);
 
     return argumentBuilder;
   }
