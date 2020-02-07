@@ -7,3 +7,4 @@ edu.usc.softarch.arcade.frontend.console.depsbuilder.JavaSourceToDepsBuilderCons
 edu.usc.softarch.arcade.frontend.console.depsbuilder.CSourceToDepsBuilderConsoleUI
 edu.usc.softarch.arcade.frontend.console.archsmelldetector.ArchSmellDetectorUI
 edu.usc.softarch.arcade.frontend.console.a2a.BatchSystemEvoConsoleUI
+edu.usc.softarch.arcade.frontend.console.batchdecaymetricsanalyzer.BatchDecayMetricsAnalyzerConsoleUI
