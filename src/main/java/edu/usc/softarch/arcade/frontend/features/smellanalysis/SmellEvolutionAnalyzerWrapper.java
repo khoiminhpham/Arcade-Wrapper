@@ -1,17 +1,17 @@
-package edu.usc.softarch.arcade.frontend.features.batchdecaymetricsanalyzer;
+package edu.usc.softarch.arcade.frontend.features.smellanalysis;
 
 import java.io.File;
 import java.io.IOException;
 import java.util.Map;
-import edu.usc.softarch.arcade.decay.BatchDecayMetricsAnalyzer;
+import edu.usc.softarch.arcade.antipattern.detection.SmellEvolutionAnalyzer;
 import edu.usc.softarch.arcade.frontend.features.FeatureWrapper;
 
-public class BatchDecayMetricsAnalyzerWrapper
+public class SmellEvolutionAnalyzerWrapper
   implements FeatureWrapper
 {
   //#region CONFIGURATION
   @Override
-  public String getName() { return arcade.strings.components.DecayMetrics.id; }
+  public String getName() { return arcade.strings.components.SmellAnalysis.id; }
 
   @Override
   public String[] getArgumentIds()
@@ -19,8 +19,6 @@ public class BatchDecayMetricsAnalyzerWrapper
     return new String[]
     {
       arcade.strings.args.sourceDir.id,
-      arcade.strings.args.sourceDir2.id,
-      //arcade.strings.args.binDir.id
     };
   }
   //#endregion
@@ -31,11 +29,10 @@ public class BatchDecayMetricsAnalyzerWrapper
     throws Exception, IOException, IllegalArgumentException
   {
     String fs = File.separator;    
-    String[] parsedArgs = new String[2];
-    parsedArgs[0] = args.get(arcade.strings.args.sourceDir.id);
-    parsedArgs[1] = args.get(arcade.strings.args.sourceDir2.id);
+    String[] parsedArgs = new String[1];
+    parsedArgs[0] = args.get(arcade.strings.args.sourceDir.id);    
     
-    BatchDecayMetricsAnalyzer.main(parsedArgs);
+    SmellEvolutionAnalyzer.main(parsedArgs);
   }
   //#endregion
 
@@ -52,15 +49,7 @@ public class BatchDecayMetricsAnalyzerWrapper
       errorMessage += args.get(arcade.strings.args.sourceDir.id);
       throw new IllegalArgumentException(errorMessage);
     }
-    
-    File sourceDir2 = new File(args.get(arcade.strings.args.sourceDir2.id));
-    if(!sourceDir2.exists())
-    {
-      String errorMessage = "sourceDir2 directory does not exist: ";
-      errorMessage += args.get(arcade.strings.args.sourceDir2.id);
-      throw new IllegalArgumentException(errorMessage);
-    }  
-
+        
     return true;
   }
   //#endregion
