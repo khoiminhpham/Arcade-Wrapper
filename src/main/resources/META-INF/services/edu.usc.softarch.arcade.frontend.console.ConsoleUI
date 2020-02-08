@@ -9,3 +9,4 @@ edu.usc.softarch.arcade.frontend.console.archsmelldetector.ArchSmellDetectorUI
 edu.usc.softarch.arcade.frontend.console.a2a.BatchSystemEvoConsoleUI
 edu.usc.softarch.arcade.frontend.console.batchdecaymetricsanalyzer.BatchDecayMetricsAnalyzerConsoleUI
 edu.usc.softarch.arcade.frontend.console.smellanalysis.SmellEvolutionAnalyzerConsoleUI
+edu.usc.softarch.arcade.frontend.console.smellanalysis.SmellDensityAnalyzerConsoleUI
